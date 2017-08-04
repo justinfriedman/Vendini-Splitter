@@ -31,7 +31,7 @@ imgUrl =""
 for img in soup.find_all('img'): #add path to ticketagent sit for images that had local paths
 
 
-    if img['src'][0] != 'h':
+    if img['src'][0] != 'h' and img['src'][2] != 'w' :
                 if  img['src'][2] != 't':
                         imgUrl = 'https://ticketagent.vendini.com' + img['src']
                         img['src'] = os.path.basename(img['src'])
@@ -62,7 +62,7 @@ divs = soup.find_all("div", id="etickets") #write all divs with id etickets to v
 options = {
     'orientation':'Landscape',
     'page-size': 'B7',
-    'zoom': '2'
+    'zoom': '6'
 
 }
 
